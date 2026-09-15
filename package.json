@@ -1,0 +1,32 @@
+{
+  "name": "python-learning-platform",
+  "version": "1.0.0",
+  "description": "Python программалоо боюнча интерактивдүү окутуу платформасы. Блум таксономиясы боюнча 6 деңгээлдүү сабак.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "python",
+    "education",
+    "kyrgyz",
+    "bloom-taxonomy",
+    "interactive",
+    "learning"
+  ],
+  "author": "omurbekisrailuulu9-crypto",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omurbekisrailuulu9-crypto/python-learning-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omurbekisrailuulu9-crypto/python-learning-platform/issues"
+  },
+  "homepage": "https://omurbekisrailuulu9-crypto.github.io/python-learning-platform/",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
