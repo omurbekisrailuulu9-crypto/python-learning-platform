@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Окутуу Платформасы | Блум Таксономиясы</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-python"></i>
+                <span>Python Окутуу Платформасы</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Башы</a></li>
+                <li><a href="#levels">Деңгээлдер</a></li>
+                <li><a href="#dashboard">Прогресс</a></li>
+                <li><a href="#help">Жардам</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Секция -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Python программалоо боюнча сабак</h1>
+            <p>Блум таксономиясынын 6 деңгээли боюнча интерактивдүү окутуу</p>
+            <button class="btn btn-primary" onclick="scrollToSection('levels')">Баштоо</button>
+        </div>
+    </header>
+
+    <!-- Деңгээлдердин таңдоо -->
+    <section id="levels" class="levels-section">
+        <div class="container">
+            <h2>Окутуунун Деңгээлдери</h2>
+            <p class="subtitle">Ар бир деңгээлде теория, практика жана тестилер бар</p>
+            
+            <div class="levels-grid">
+                <!-- Level 1: Biluu (Remember) -->
+                <div class="level-card" onclick="openLevel(1)">
+                    <div class="level-icon">1️⃣</div>
+                    <h3>Билүү</h3>
+                    <p>Негизги терминдер</p>
+                    <small>10 минута</small>
+                    <div class="level-badge">Remember</div>
+                </div>
+
+                <!-- Level 2: Tyshunuu (Understand) -->
+                <div class="level-card" onclick="openLevel(2)">
+                    <div class="level-icon">2️⃣</div>
+                    <h3>Түшүнүү</h3>
+                    <p>Кодду окуп түшүнүү</p>
+                    <small>15 минута</small>
+                    <div class="level-badge">Understand</div>
+                </div>
+
+                <!-- Level 3: Koldonu (Apply) -->
+                <div class="level-card" onclick="openLevel(3)">
+                    <div class="level-icon">3️⃣</div>
+                    <h3>Колдонуу</h3>
+                    <p>Практикалык тапшырмалар</p>
+                    <small>20 минута</small>
+                    <div class="level-badge">Apply</div>
+                </div>
+
+                <!-- Level 4: Talda (Analyze) -->
+                <div class="level-card" onclick="openLevel(4)">
+                    <div class="level-icon">4️⃣</div>
+                    <h3>Талдоо</h3>
+                    <p>Ката табуу жана салыштыруу</p>
+                    <small>20 минута</small>
+                    <div class="level-badge">Analyze</div>
+                </div>
+
+                <!-- Level 5: Baaluu (Evaluate) -->
+                <div class="level-card" onclick="openLevel(5)">
+                    <div class="level-icon">5️⃣</div>
+                    <h3>Баалоо</h3>
+                    <p>Код-ревью жана критика</p>
+                    <small>15 минута</small>
+                    <div class="level-badge">Evaluate</div>
+                </div>
+
+                <!-- Level 6: Jaratu (Create) -->
+                <div class="level-card" onclick="openLevel(6)">
+                    <div class="level-icon">6️⃣</div>
+                    <h3>Жаратуу</h3>
+                    <p>Жеке долбоор</p>
+                    <small>30-45 минута</small>
+                    <div class="level-badge">Create</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модалдык окно деңгээлдер үчүн -->
+    <div id="levelModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="levelContent"></div>
+        </div>
+    </div>
+
+    <!-- Прогресс табло -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <h2>Сизин Прогрессиңиз</h2>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <p id="progressText">0/6 деңгээл аякталды</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Тестилер өтүлдү</h4>
+                    <p class="stat-number" id="testsPassed">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Таптабын балл</h4>
+                    <p class="stat-number" id="totalScore">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Убакыт (минута)</h4>
+                    <p class="stat-number" id="timeSpent">0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Жардам секция -->
+    <section id="help" class="help-section">
+        <div class="container">
+            <h2>Кеңеш жана Жардам</h2>
+            <div class="help-grid">
+                <div class="help-card">
+                    <h4>Кантип баштоо керек?</h4>
+                    <p>Жогорудан "Деңгээлдер" бөлүмүндөн баштаңыз. Ар бир деңгээл бөлүп-бөлүнчө аткарылса болот.</p>
+                </div>
+                <div class="help-card">
+                    <h4>Код-редактор кантип колдонуу?</h4>
+                    <p>Практикалык тапшырмалардын жанында "Кодду иштеңиз" кнопкасын басыңыз. Код жазып, Run баса аласыз.</p>
+                </div>
+                <div class="help-card">
+                    <h4>Тест канча балл берет?</h4>
+                    <p>Ар бир тест 100 балл. Туура жооптор - 100%, жарым-жартылай туура - 50%, туура эмес - 0%.</p>
+                </div>
+                <div class="help-card">
+                    <h4>Долбоор кандай болушу керек?</h4>
+                    <p>6-деңгээлде иштеген программаңыз катасыз иштеп, талаптарды аткарышы керек. Презентация 1 мүнөт.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Python Окутуу Платформасы | Блум таксономиясы боюнча сабак плану</p>
+            <p>Кыргыз Республикасы | 7-9-класстар үчүн</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
